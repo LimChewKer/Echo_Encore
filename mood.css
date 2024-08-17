@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background for the whole page */
+    margin: 0;
+    padding: 0;
+    color: #ffffff; /* Default text color */
+}
+
+header.banner {
+    background-color: #222; /* Dark gray background for header */
+    padding: 20px;
+}
+
+header .banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .banner-content h1 {
+    color: #fff; /* White text color for the header title */
+}
+
+header nav a {
+    color: #fff; /* White text color for navigation links */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+header nav .contribute-button {
+    background-color: #ff69b4; /* Pink background for the button */
+    color: #fff; /* White text color for the button */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff; /* White text color for headings */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    background-color: #333; /* Dark background for input */
+    color: #ffffff; /* White text inside input */
+    border: 1px solid #555; /* Dark border for input */
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#playlist {
+    margin-top: 20px;
+}
+
+.track-item {
+    padding: 10px;
+    border-bottom: 1px solid #444; /* Darker border for track items */
+}
+
+/* Music Mood Playlist Generator Styles */
+.mood-container {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* White background with 10% opacity */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    margin: 20px 0;
+}
+
+.mood-container h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #eb0cc5; /* Matching color for headings */
+}
+
+.mood-container input {
+    padding: 10px;
+    border: 1px solid #333; /* Dark border to match the theme */
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #121212; /* Dark background for input */
+    color: #ffffff; /* White text inside input */
+}
+
+.mood-container button {
+    background-color: #ff7ebe;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.mood-container button:hover {
+    background-color: #d32f2f;
+}
+
+.playlist-item {
+    background-color: #1e1e1e; /* Black background for playlist items */
+    padding: 10px;
+    border-bottom: 1px solid #333; /* Darker border */
+    border-radius: 5px;
+    color: #ffffff; /* White text color */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.playlist-item:last-child {
+    border-bottom: none;
+}
+
+.playlist-item img {
+    width: 60px; /* Adjusted size */
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.playlist-item h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.playlist-item p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #b3b3b3; /* Lighter text color for description */
+}
+
+.playlist-item a {
+    color: #eb0cc5; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.playlist-item a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding-bottom: 60px;
+}
+
+.search {
+    width: 15px;
+}
+
+.pink-link {
+    color: #ef53d5;
+    text-decoration: none; /* Optional: Removes the underline */
+}
+
+.pink-link:hover {
+    text-decoration: underline; /* Optional: Adds underline on hover */
+}

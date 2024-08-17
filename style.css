@@ -1,0 +1,274 @@
+canvas {
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+
+.banner-container {
+    margin-top: 0;
+    padding: 40px;
+    padding-top: 0%;
+}
+.main-container {
+    /* margin-top: 10%; */
+    margin-bottom: 0;
+    background: rgba(255,255,255,0.95);
+    padding: 40px;
+}
+.outer-container {
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+}
+.container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+.stat {
+    font-size: 3em;
+    color: #296add;
+    margin: 0;
+    padding: 0;
+}
+.statlabel {
+    font-size: 1em;
+}
+
+.citation {
+    margin-left: 10px;
+    padding: 8px;
+}
+
+.citation:not(:first-child) {
+    margin-top: 10px;
+}
+
+.citation h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: initial;
+}
+
+.citation b {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.citation ul {
+    padding-left: 0px;
+    margin: 0;
+}
+
+.citation li {
+    display: inline;
+}
+
+.citation h4 {
+    line-height: normal;
+    font-weight: bold;
+}
+
+.citation h5 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    line-height: normal;
+    font-size: 12px;
+}
+
+.citation h6 {
+    /* margin-top: 4px; */
+    font-style: italic;
+}
+
+.citation img,
+.citation video {
+    float: right;
+    margin-left: 8px;
+}
+
+.citation p {
+    /* color: steelblue; */
+    /* font-weight: bold; */
+    font-size: 12px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.citation .conference {
+    font-style: normal;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-left: 5px;
+    /* background-color: PaleGreen; */
+    margin-left: 0;
+}
+
+.citation .conference.workshop {
+    background-color: LightSkyBlue;
+}
+
+.citation .conference.arxiv {
+    background-color: Gainsboro;
+}
+
+@media only screen and (max-width: 600px) {
+    .news,
+    .citation {
+        margin-left: 0;
+    }
+    .citation h4 {
+        font-size: 14px;
+    }
+    .citation ul {
+        font-size: 12px;
+    }
+    .authors h5 {
+        font-size: 20px;
+    }
+    .authors h6 {
+        font-size: 16px;
+        padding-bottom: 6px;
+    }
+    .show_wide {
+        display: none;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .btn-search {
+        font-size: 16px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}
+
+.authors {
+    padding-bottom: 10px;
+}
+.authors .col-sm-3 {
+    padding: 0;
+}
+.authors h5 {
+    font-size: 24px;
+    font-weight: 300;
+}
+.authors h5 {
+    font-size: 20px;
+}
+
+.shadowed_text {
+    text-shadow: 4px 0 4px #5fb7f7, 0 -4px 4px #5fb7f7, 0 4px 4px #5fb7f7, -4px 0 4px #5fb7f7;
+    color: white;
+}
+
+
+p, .caption {
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    margin-top: 4px;
+}
+.caption {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.buttons .btn {
+    padding: 16px 32px;
+    margin: 6px;
+    border: none;
+    background: none;
+    box-shadow: none;
+    text-shadow: none;
+    opacity: 0.90;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    line-height: 1;
+    outline: none;
+    background-color: #ddd;
+}
+
+.buttons .btn:hover {
+    opacity: 1;
+}
+.buttons .btn:active {
+    transform: translateY(1px);
+}
+.buttons .btn-primary {
+    background-color: #055ada;
+    color: #fff;
+}
+
+.btn-search {
+    display: block;
+    text-align: center;
+    padding: 12px 20px 12px 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.btn-search svg {
+    margin-right: 4px;
+}
+
+hr.divider {
+    max-width: 1568px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.row:not(:last-child):not(.authors) {
+    margin-bottom: 16px;
+}
+
+.invisible {
+    display: none;
+}
+
+.btn-light.disabled {
+    /* border: 2px black; */
+    background-color: #ccc;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.captioned_img img {
+    width: 100%; /* Original size */
+    max-width: 600px; /* Add this line to limit the size */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .captioned_img img {
+        max-width: 100%; /* Ensure images are responsive on small screens */
+    }
+}
+
+.container.banner-container {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+body {
+    background-color: black;
+}
+
+h1.text-center {
+    color: pink;
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+}

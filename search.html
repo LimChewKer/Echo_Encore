@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo Encore</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        header.banner {
+            background-color: #333;
+            padding: 20px;
+        }
+        .banner-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner-content h1 {
+            margin: 0;
+            color: #eb0cc5;
+        }
+        .banner-content nav a {
+            margin-right: 20px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .banner-content nav .search {
+            width: 20px;
+            height: 20px;
+        }
+        .contribute-button {
+            background-color: #eb0cc5;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        .search-section {
+            flex: 1;
+            margin: 0 20px;
+        }
+        #search-form-artist, #search-form-song {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        #search-form-artist input[type="text"], #search-form-song input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px 0 0 5px;
+            background-color: #222;
+            color: #ffffff;
+            font-size: 16px;
+        }
+        #search-form-artist input[type="text"]::placeholder, #search-form-song input[type="text"]::placeholder {
+            color: #aaa;
+        }
+        #search-form-artist button, #search-form-song button {
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 0 5px 5px 0;
+            background-color: #eb0cc5;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #events-artist, #events-song {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .event {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .event h3 {
+            margin: 0;
+            color: #eb0cc5;
+        }
+        .event p {
+            margin: 5px 0;
+        }
+        .event a {
+            color: #1e90ff;
+        }
+    </style>
+</head>
+<body>
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="DailyNews">Echo Encore</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="mood.html">How you feel</a>
+                <a href="chart.html">Music of the Week</a>
+                <a href="guess.html">Mini Game</a>
+                <a href="search.html">
+                    <img src="icon.png" alt="Search" class="search">
+                </a>
+                <a href="contribute.html"><button class="contribute-button">Contribute</button></a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="container">
+        <!-- Left Side: Search for Artist -->
+        <div class="search-section">
+            <h1>Search for Artist</h1>
+            <form id="search-form-artist">
+                <input type="text" id="artist-name" placeholder="Enter artist name" required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="events-artist"></div>
+        </div>
+
+        <!-- Right Side: Search for Song -->
+        <div class="search-section">
+            <h1>Search for Song</h1>
+            <form id="search-form-song">
+                <input type="text" id="song-name" placeholder="Enter song name" required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="events-song"></div>
+        </div>
+    </div>
+
+    <script src="events.js"></script>
+    <script src="songs.js"></script>
+</body>
+</html>

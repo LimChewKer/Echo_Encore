@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo Encore</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chart.css">
+</head>
+<body>
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="DailyNews">Echo Encore</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="mood.html">How you feel</a>
+                <a href="chart.html">Music of the Week</a>
+                <a href="guess.html">Mini Game</a>
+                <a href="search.html">
+                    <img src="icon.png" alt="Search" class="search">
+                </a>
+                <a href="contribute.html"><button class="contribute-button">Contribute</button></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="chart-title">Top Music This Week</h1>
+        <div id="chart"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Echo Encore</p>
+    </footer>
+
+    <script>
+        const API_KEY = '345202cf38e1e29edbeeb83ea87828e3';
+        const TAPE_IMAGE = 'tape.png'; // Use tape.png for all tracks
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadChart();
+        });
+
+        async function loadChart() {
+            try {
+                const response = await fetch(`https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&limit=10&api_key=${API_KEY}&format=json&period=7day`);
+                const data = await response.json();
+                console.log('API Response:', data); // Log the response for debugging
+                displayChart(data.tracks.track);
+            } catch (error) {
+                console.error('Error fetching chart data:', error);
+                document.getElementById('chart').innerHTML = '<p>Something went wrong. Please try again later.</p>';
+            }
+        }
+
+        function displayChart(tracks) {
+            const chartDiv = document.getElementById('chart');
+
+            tracks.forEach((track, index) => {
+                // Use tape.png for all tracks
+                const trackInfo = `
+                    <div class="track">
+                        <img src="${TAPE_IMAGE}" alt="Album art" class="track-image">
+                        <div class="track-info">
+                            <h3>${index + 1}. ${track.name} by ${track.artist.name}</h3>
+                            <p>Listeners: ${track.listeners}</p>
+                            <a href="${track.url}" target="_blank">View on Last.fm</a>
+                        </div>
+                    </div>
+                `;
+                chartDiv.innerHTML += trackInfo;
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo Encore</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contribute.css">
+</head>
+<body>
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="DailyNews">Echo Encore</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="mood.html">How you feel</a>
+                <a href="chart.html">Music of the Week</a>
+                <a href="guess.html">Mini Game</a>
+                <a href="contribute.html"><button class="contribute-button">Contribute</button></a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="text-center">Contribute to Echo Encore</h1>
+        <form id="contribution-form">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="contribution">Your Contribution:</label>
+                <textarea id="contribution" name="contribution" class="form-control" rows="10" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <p id="response-message" style="display: none;"></p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contribution-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(this);
+
+            fetch('/contribute', {
+                method: 'POST',
+                body: new URLSearchParams(formData)
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Display success message
+                document.getElementById('response-message').textContent = data;
+                document.getElementById('response-message').style.display = 'block';
+
+                // Optionally clear the form
+                this.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('response-message').textContent = 'An error occurred while saving your contribution.';
+                document.getElementById('response-message').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

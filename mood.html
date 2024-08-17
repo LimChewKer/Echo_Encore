@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo Encore</title>
+    <link rel="icon" type="image/png"  href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mood.css">
+</head>
+<body>
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="DailyNews">Echo Encore</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="mood.html">How you feel</a>
+                <a href="chart.html">Music of the Week</a>
+                <a href="guess.html">Mini Game</a>
+                <a href="search.html">
+                    <img src="icon.png" alt="Search" class="search">
+                </a>
+                <a href="contribute.html"><button class="contribute-button">Contribute</button></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="mood-container">
+            <h2>Music Mood Playlist Generator</h2>
+            <form id="moodForm">
+                <label for="mood">Enter mood:</label>
+                <input type="text" id="mood" name="mood" required>
+                <button type="submit">Generate Playlist</button>
+            </form>
+            <div id="playlist"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Echo Encore</p>
+    </footer>
+
+    <script src="mood_script.js"></script>
+</body>
+</html>
